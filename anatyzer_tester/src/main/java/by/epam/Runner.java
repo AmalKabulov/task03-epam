@@ -14,29 +14,10 @@ public class Runner {
 
         AnalyzerFactory analyzerFactory = AnalyzerFactory.getInstance();
         Analyzer analyzer = analyzerFactory.getAnalyzer(inputStream);
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
-        Print.print(analyzer.next());
+        while (analyzer.hasNext()) {
+            Print.print(analyzer.next());
+        }
+
 
     }
 }

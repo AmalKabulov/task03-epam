@@ -2,7 +2,7 @@ package by.epam.analyzer.impl;
 
 import by.epam.analyzer.Analyzer;
 import by.epam.analyzer.entity.Node;
-import by.epam.analyzer.entity.Tag;
+import by.epam.analyzer.entity.NodeType;
 import by.epam.analyzer.exception.ParseException;
 import by.epam.analyzer.exception.ReaderCloseException;
 import by.epam.analyzer.reader.XmlReader;
@@ -24,10 +24,10 @@ public class XmlAnalyzer implements Analyzer {
 
 
     {
-        conditions = List.of(Tag.OPEN.getValue(),
-                Tag.CLOSE.getValue(),
-                Tag.SELF_CLOSE.getValue(),
-                Tag.TEXT.getValue());
+        conditions = List.of(NodeType.OPEN_TAG.getValue(),
+                NodeType.CLOSE_TAG.getValue(),
+                NodeType.SELF_CLOSE_TAG.getValue(),
+                NodeType.TEXT.getValue());
     }
 
     public XmlAnalyzer(final InputStream inputStream) {
@@ -77,9 +77,9 @@ public class XmlAnalyzer implements Analyzer {
         Matcher m = pattern.matcher(line);
         if (m.find()) {
             int startIndex = m.start();
-            Tag tag = Tag.getByValue(condition);
+            NodeType nodeType = NodeType.getByValue(condition);
             String result = m.group().replaceAll(OPEN_AND_CLOSE_TAG, EMPTY);
-            Node node = new Node(tag, result);
+            Node node = new Node(nodeType, result);
             parsedLines.put(startIndex, node);
         }
     }

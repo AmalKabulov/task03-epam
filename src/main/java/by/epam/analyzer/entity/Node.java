@@ -3,13 +3,13 @@ package by.epam.analyzer.entity;
 import java.util.Objects;
 
 public class Node {
-    private Tag type;
+    private NodeType type;
     private String name;
 
     public Node() {
     }
 
-    public Node(Tag type, String name) {
+    public Node(NodeType type, String name) {
         this.type = type;
         this.name = name;
     }
@@ -37,11 +37,11 @@ public class Node {
                 '}';
     }
 
-    public Tag getType() {
+    public NodeType getType() {
         return type;
     }
 
-    public void setType(Tag type) {
+    public void setType(NodeType type) {
         this.type = type;
     }
 

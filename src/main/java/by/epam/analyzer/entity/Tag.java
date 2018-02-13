@@ -1,4 +1,4 @@
-package by.epam.parser.entity;
+package by.epam.analyzer.entity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.Map;
 public enum Tag {
     OPEN("<[^/][\\s\\w\\-_=\"']*?>"),
     CLOSE("<[/][\\w[-]*]+?>"),
-    SELF_CLOSE("<[^/][\\w[,|=|+|\\s|.|:|;]*]+?[/]>"),
+    SELF_CLOSE("<[^/][\\w[,|=|+|\\s|.|:|;|\"]*]+?[/]>"),
     TEXT("(?<![<[\\w\\s]*])[\\w[,]*[=]*[+]*[\\s]*[.]*[:]*[;]*[-]*[']*[`]*]+(?![[\\w\\s\"]*>])");
 
 

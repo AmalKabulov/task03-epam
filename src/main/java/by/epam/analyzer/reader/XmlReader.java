@@ -38,8 +38,8 @@ public class XmlReader implements AutoCloseable {
     private void fillBatch() throws IOException {
         String currentLine = reader.readLine();
         if (currentLine != null) {
-            if (currentLine.equals(XML_VERSION)) {
-                fillBatch();
+            if (currentLine.equalsIgnoreCase(XML_VERSION)) {
+                currentLine = reader.readLine();
             }
             batch.add(currentLine.trim());
             if (!currentLine.endsWith(CLOSE_TAG)) {

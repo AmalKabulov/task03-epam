@@ -9,7 +9,8 @@ import by.epam.analyzer.reader.XmlReader;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.*;
+import java.util.List;
+import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -82,6 +83,7 @@ public class XmlAnalyzer implements Analyzer {
             parsedLines.put(startIndex, node);
         }
     }
+
 
 
 }

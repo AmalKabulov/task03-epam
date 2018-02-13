@@ -27,5 +27,32 @@
       <artifactId>analyzer</artifactId>
       <version>1.0</version>
     </dependency>
+
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-install-plugin</artifactId>
+        <version>2.5.2</version>
+        <executions>
+          <execution>
+            <phase>initialize</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>lib/task03-1.0-SNAPSHOT.jar</file>
+              <groupId>by.epam</groupId>
+              <artifactId>analyzer</artifactId>
+              <version>1.0</version>
+              <packaging>jar</packaging>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
 </project>

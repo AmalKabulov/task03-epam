@@ -2,8 +2,8 @@ package by.epam;
 
 import by.epam.analyzer.Analyzer;
 import by.epam.analyzer.AnalyzerFactory;
-import by.epam.analyzer.exception.ParseException;
-import by.epam.analyzer.exception.ReaderCloseException;
+import by.epam.analyzer.impl.exception.ParseException;
+import by.epam.analyzer.impl.exception.ReaderCloseException;
 
 import java.io.InputStream;
 

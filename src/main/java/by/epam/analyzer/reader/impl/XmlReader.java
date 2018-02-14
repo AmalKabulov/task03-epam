@@ -1,6 +1,6 @@
-package by.epam.analyzer.reader;
+package by.epam.analyzer.reader.impl;
 
-import by.epam.analyzer.exception.ReaderCloseException;
+import by.epam.analyzer.reader.exeption.ReaderCloseException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,7 +13,7 @@ public class XmlReader implements AutoCloseable {
     private static final String XML_VERSION = "<?xml version=\"1.0\"?>";
     private static final String CLOSE_TAG = ">";
 
-    private List<String> batch = new ArrayList<>();
+    private final List<String> batch = new ArrayList<>();
     private BufferedReader reader;
     private boolean closed;
 

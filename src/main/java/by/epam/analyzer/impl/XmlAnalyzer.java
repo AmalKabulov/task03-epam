@@ -3,9 +3,9 @@ package by.epam.analyzer.impl;
 import by.epam.analyzer.Analyzer;
 import by.epam.analyzer.entity.Node;
 import by.epam.analyzer.entity.NodeType;
-import by.epam.analyzer.exception.ParseException;
-import by.epam.analyzer.exception.ReaderCloseException;
-import by.epam.analyzer.reader.XmlReader;
+import by.epam.analyzer.impl.exception.ParseException;
+import by.epam.analyzer.reader.exeption.ReaderCloseException;
+import by.epam.analyzer.reader.impl.XmlReader;
 
 import java.io.IOException;
 import java.io.InputStream;

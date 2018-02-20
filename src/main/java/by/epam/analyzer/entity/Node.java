@@ -15,7 +15,7 @@ public class Node {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o) {// соблюдай очередность размещения методов в классе
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Node node = (Node) o;

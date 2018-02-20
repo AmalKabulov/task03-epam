@@ -15,7 +15,7 @@ public class XmlReader implements AutoCloseable {
 
     private final List<String> batch = new ArrayList<>();
     private BufferedReader reader;
-    private boolean closed;
+    private boolean closed;//isClosed
 
 
     public XmlReader(InputStream inputStream) {

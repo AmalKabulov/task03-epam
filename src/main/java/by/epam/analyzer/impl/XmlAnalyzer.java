@@ -65,7 +65,7 @@ public class XmlAnalyzer implements Analyzer {
                 reader.close();
                 return;
             }
-            conditions.forEach(condition -> parseLine(condition, line));
+            conditions.forEach(condition -> parseLine(condition, line));// излишне будешь создавать объеткты типа Pattern
         } catch (IOException e) {
             throw new ParseException("ERROR WHILE PARSING... " + e);
         }

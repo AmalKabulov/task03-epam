@@ -24,9 +24,9 @@ public class XmlAnalyzer implements Analyzer {
 
     {
         conditions = List.of(Pattern.compile(NodeType.OPEN_TAG.getValue()),
-                Pattern.compile(NodeType.CLOSE_TAG.getValue()),
-                Pattern.compile(NodeType.SELF_CLOSE_TAG.getValue()),
-                Pattern.compile(NodeType.TEXT.getValue()));
+                             Pattern.compile(NodeType.CLOSE_TAG.getValue()),
+                             Pattern.compile(NodeType.SELF_CLOSE_TAG.getValue()),
+                             Pattern.compile(NodeType.TEXT.getValue()));
     }
 
     public XmlAnalyzer(final InputStream inputStream) {

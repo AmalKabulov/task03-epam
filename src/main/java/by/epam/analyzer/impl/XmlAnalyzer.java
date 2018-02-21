@@ -19,14 +19,14 @@ public class XmlAnalyzer implements Analyzer {
     private XmlReader reader;
 
     private TreeMap<Integer, Node> parsedLines = new TreeMap<>();
-    private final List<String> conditions;
+    private final List<Pattern> conditions;
 
 
     {
-        conditions = List.of(NodeType.OPEN_TAG.getValue(),
-                NodeType.CLOSE_TAG.getValue(),
-                NodeType.SELF_CLOSE_TAG.getValue(),
-                NodeType.TEXT.getValue());
+        conditions = List.of(Pattern.compile(NodeType.OPEN_TAG.getValue()),
+                Pattern.compile(NodeType.CLOSE_TAG.getValue()),
+                Pattern.compile(NodeType.SELF_CLOSE_TAG.getValue()),
+                Pattern.compile(NodeType.TEXT.getValue()));
     }
 
     public XmlAnalyzer(final InputStream inputStream) {
@@ -36,7 +36,6 @@ public class XmlAnalyzer implements Analyzer {
 
     @Override
     public Node next() throws ParseException, ReaderCloseException {
-
         Node node = null;
         if (hasNext()) {
             Integer fistParsedResult = parsedLines.firstKey();
@@ -50,6 +49,7 @@ public class XmlAnalyzer implements Analyzer {
 
     @Override
     public boolean hasNext() throws ParseException, ReaderCloseException {
+
         if (parsedLines.isEmpty()) {
             if (!reader.isClosed()) {
                 parseNext();
@@ -65,16 +65,16 @@ public class XmlAnalyzer implements Analyzer {
                 reader.close();
                 return;
             }
-            conditions.forEach(condition -> parseLine(condition, line));
+            conditions.forEach(founder -> parseLine(founder, line));
         } catch (IOException e) {
             throw new ParseException("ERROR WHILE PARSING... " + e);
         }
     }
 
 
-    private void parseLine(final String condition, final String line) {
-        Pattern pattern = Pattern.compile(condition);
-        Matcher m = pattern.matcher(line);
+    private void parseLine(final Pattern founder, final String line) {
+        String condition = founder.pattern();
+        Matcher m = founder.matcher(line);
         if (m.find()) {
             int startIndex = m.start();
             NodeType nodeType = NodeType.getByValue(condition);

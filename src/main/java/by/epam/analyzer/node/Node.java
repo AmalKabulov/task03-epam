@@ -1,4 +1,4 @@
-package by.epam.analyzer.entity;
+package by.epam.analyzer.node;
 
 import java.util.Objects;
 

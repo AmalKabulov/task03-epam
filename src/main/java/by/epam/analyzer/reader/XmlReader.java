@@ -1,6 +1,6 @@
-package by.epam.analyzer.reader.impl;
+package by.epam.analyzer.reader;
 
-import by.epam.analyzer.reader.exeption.ReaderCloseException;
+import by.epam.analyzer.reader.ReaderCloseException;
 
 import java.io.BufferedReader;
 import java.io.IOException;

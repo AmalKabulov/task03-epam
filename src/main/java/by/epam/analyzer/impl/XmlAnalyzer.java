@@ -1,11 +1,10 @@
 package by.epam.analyzer.impl;
 
 import by.epam.analyzer.Analyzer;
-import by.epam.analyzer.entity.Node;
-import by.epam.analyzer.entity.NodeType;
-import by.epam.analyzer.impl.exception.ParseException;
-import by.epam.analyzer.reader.exeption.ReaderCloseException;
-import by.epam.analyzer.reader.impl.XmlReader;
+import by.epam.analyzer.node.Node;
+import by.epam.analyzer.node.NodeType;
+import by.epam.analyzer.reader.ReaderCloseException;
+import by.epam.analyzer.reader.XmlReader;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -37,6 +36,7 @@ public class XmlAnalyzer implements Analyzer {
 
     @Override
     public Node next() throws ParseException, ReaderCloseException {
+
         Node node = null;
         if (hasNext()) {
             Integer fistParsedResult = parsedLines.firstKey();
@@ -84,6 +84,10 @@ public class XmlAnalyzer implements Analyzer {
         }
     }
 
+
+    public static void main(String[] args) {
+        System.out.println(6^3);
+    }
 
 
 }

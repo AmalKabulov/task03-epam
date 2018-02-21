@@ -1,6 +1,6 @@
 package by.epam;
 
-import by.epam.analyzer.entity.Node;
+import by.epam.analyzer.node.Node;
 
 public class Print {
 

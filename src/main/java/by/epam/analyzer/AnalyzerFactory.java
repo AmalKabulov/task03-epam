@@ -19,4 +19,5 @@ public class AnalyzerFactory {
          Analyzer analyzer = new XmlAnalyzer(inputStream);
          return analyzer;
     }
+
 }

@@ -1,4 +1,4 @@
-package by.epam.analyzer.reader.exeption;
+package by.epam.analyzer.reader;
 
 public class ReaderCloseException extends Exception {
     public ReaderCloseException() {

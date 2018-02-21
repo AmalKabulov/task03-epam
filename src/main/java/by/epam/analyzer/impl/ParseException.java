@@ -1,4 +1,4 @@
-package by.epam.analyzer.impl.exception;
+package by.epam.analyzer.impl;
 
 public class ParseException extends Exception {
     public ParseException() {
